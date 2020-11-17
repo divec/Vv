@@ -1,0 +1,49 @@
+{
+	"name": "Vv",
+	"license-name": "MIT",
+	"version": "0.0.0",
+	"url": "https://www.mediawiki.org/wiki/Extension:Vv",
+	"namemsg": "vv",
+	"descriptionmsg": "vv-desc",
+	"manifest_version": 2,
+	"requires": {
+		"MediaWiki": ">= 1.35.0",
+		"extensions": {
+			"VisualEditor": ">= 0.1.2",
+			"Linter": "*"
+		}
+	},
+	"MessagesDirs": {
+		"Vv": [
+			"i18n"
+		]
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "modules",
+		"remoteExtPath": "Vv/modules"
+	},
+	"ResourceModules": {
+		"ext.vv.init": {
+			"packageFiles": [
+				"vv.init.js",
+				"VisualEditor.vue",
+				"Vv.vue"
+			],
+			"dependencies": [
+				"vue",
+				"ext.visualEditor.mwwikitext",
+				"ext.visualEditor.core.desktop"
+			]
+		}
+	},
+	"SpecialPages": {
+		"VvTest": "SpecialVvTest"
+	},
+	"AutoloadClasses": {
+		"SpecialVvTest": "includes/SpecialVvTest.php"
+	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\Vv\\": "includes/"
+	},
+	"type": "other"
+}
